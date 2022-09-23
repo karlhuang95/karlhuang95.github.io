@@ -352,7 +352,8 @@ code {
   color: #e17523;
 }
 strong {
-  color: #be0000;
+  # color: #be0000;
+  color: white;
   font-weight: bold;
 }
 
