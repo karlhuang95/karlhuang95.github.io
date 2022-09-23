@@ -16,17 +16,19 @@
   <meta name="author" content="karl">
   <meta name="keywords" content="">
   
-    <meta name="description" content="微服务概念单体架构尽管也是模块化逻辑，但是最终它还是会打包并部署为单体式应用。其中最主要问题就是这个应用太复杂，以至于任何单个开发者都不可能搞懂它。应用无法扩展，可靠性很低，最终，敏捷性开发和部署变的无法完成。 我们应对的思路：    化繁为简，分而治之  1ls">
+    <meta name="description" content="微服务概念单体架构尽管也是模块化逻辑，但是最终它还是会打包并部署为单体式应用。其中最主要问题就是这个应用太复杂，以至于任何单个开发者都不可能搞懂它。应用无法扩展，可靠性很低，最终，敏捷性开发和部署变的无法完成。 我们应对的思路：    化繁为简，分而治之    微服务起源大家经常谈论的是一个叫 SOA（面向服务的架构模式），它和微服务又是什么关系？你可以把微服务想成是 SOA 的一种实践。   小">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微服务概览与治理">
 <meta property="og:url" content="http://karlhuang95.github.io/2022/09/23/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%A7%88%E4%B8%8E%E6%B2%BB%E7%90%86/index.html">
 <meta property="og:site_name" content="karl 的个人博客">
-<meta property="og:description" content="微服务概念单体架构尽管也是模块化逻辑，但是最终它还是会打包并部署为单体式应用。其中最主要问题就是这个应用太复杂，以至于任何单个开发者都不可能搞懂它。应用无法扩展，可靠性很低，最终，敏捷性开发和部署变的无法完成。 我们应对的思路：    化繁为简，分而治之  1ls">
+<meta property="og:description" content="微服务概念单体架构尽管也是模块化逻辑，但是最终它还是会打包并部署为单体式应用。其中最主要问题就是这个应用太复杂，以至于任何单个开发者都不可能搞懂它。应用无法扩展，可靠性很低，最终，敏捷性开发和部署变的无法完成。 我们应对的思路：    化繁为简，分而治之    微服务起源大家经常谈论的是一个叫 SOA（面向服务的架构模式），它和微服务又是什么关系？你可以把微服务想成是 SOA 的一种实践。   小">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://karlhuang95.github.io/2022/09/23/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%A7%88%E4%B8%8E%E6%B2%BB%E7%90%86/%E4%BC%A0%E7%BB%9F%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84.png">
 <meta property="og:image" content="http://karlhuang95.github.io/2022/09/23/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%A7%88%E4%B8%8E%E6%B2%BB%E7%90%86/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84.png">
+<meta property="og:image" content="http://karlhuang95.github.io/2022/09/23/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%A7%88%E4%B8%8E%E6%B2%BB%E7%90%86/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%92%8C%E5%8D%95%E4%BD%93%E6%9C%8D%E5%8A%A1.png">
+<meta property="og:image" content="http://karlhuang95.github.io/2022/09/23/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%A7%88%E4%B8%8E%E6%B2%BB%E7%90%86/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AE%9A%E4%B9%89.png">
 <meta property="article:published_time" content="2022-09-23T06:44:12.000Z">
-<meta property="article:modified_time" content="2022-09-23T07:34:37.264Z">
+<meta property="article:modified_time" content="2022-09-23T08:54:11.819Z">
 <meta property="article:author" content="karl">
 <meta property="article:tag" content="go语言进阶">
 <meta name="twitter:card" content="summary_large_image">
@@ -102,7 +104,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>karl</strong>
+      <strong>Karl&#39;s Blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -226,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          125 字
+          660 字
         
       </span>
     
@@ -237,7 +239,7 @@
         
         
         
-          2 分钟
+          6 分钟
         
       </span>
     
@@ -285,7 +287,29 @@
 <ul>
 <li><strong>化繁为简，分而治之</strong></li>
 </ul>
-<p><img src="传统网络应用架构.png" srcset="/img/loading.gif" lazyload alt="传统网络应用架构"><br><img src="微服务应用架构.png" srcset="/img/loading.gif" lazyload alt="微服务应用架构"><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls <br></code></pre></td></tr></table></figure></p>
+<p><img src="传统网络应用架构.png" srcset="/img/loading.gif" lazyload alt="传统网络应用架构"></p>
+<p><img src="微服务应用架构.png" srcset="/img/loading.gif" lazyload alt="微服务应用架构"></p>
+<h2 id="微服务起源"><a href="#微服务起源" class="headerlink" title="微服务起源"></a>微服务起源</h2><p>大家经常谈论的是一个叫 SOA（面向服务的架构模式），它和微服务又是什么关系？你可以把微服务想成是 SOA 的一种实践。</p>
+<p><img src="微服务和单体服务.png" srcset="/img/loading.gif" lazyload alt="微服务和单体服务"></p>
+<ul>
+<li>小即是美：小的服务代码少，bug 也少，易测试，易维护，也更容易不断迭代完善的精致进而美妙。</li>
+<li>单一职责：一个服务也只需要做好一件事，专注才能做好。 </li>
+<li>尽可能早地创建原型：尽可能早的提供服务 API，建立服务契约，达成服务间沟通的一致性约定，至于实现和完善可以慢慢再做。</li>
+<li>可移植性比效率更重要：服务间的轻量级交互协议在效率和可移植性二者间，首要依然考虑兼容性和移植性。</li>
+</ul>
+<p><code>You should instead think of Microservices as a specific approach for SOA in the same way that XP or Scrum are specific approaches for Agile software development.</code></p>
+<h2 id="微服务定义"><a href="#微服务定义" class="headerlink" title="微服务定义"></a>微服务定义</h2><p>围绕业务功能构建的，服务关注单一业务，服务间采用轻量级的通信机制，可以全自动独立部署，可以使用不同的编程语言和数据存储技术。微服务架构通过业务拆分实现服务组件化，通过组件组合快速开发系统，业务单一的服务组件又可以独立部署，使得整个系统变得清晰灵活：</p>
+<p><img src="微服务定义.png" srcset="/img/loading.gif" lazyload alt="微服务定义"></p>
+<ul>
+<li>原子服务</li>
+<li>独立进程</li>
+<li>隔离部署</li>
+<li>去中心化服务治理</li>
+</ul>
+<p><strong>缺点:</strong></p>
+<ul>
+<li>基础设施的建设、复杂度高</li>
+</ul>
 
                 
               </div>

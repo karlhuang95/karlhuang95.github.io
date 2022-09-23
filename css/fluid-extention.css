@@ -147,8 +147,8 @@ li > p {
 }
 
 .markdown-body > strong {
-  /*color: #be0000;*/
-  color: white;
+  color: #be0000;
+  /*color: white;*/
   font-weight: bold;
 }
 
@@ -352,8 +352,7 @@ code {
   color: #e17523;
 }
 strong {
-  # color: #be0000;
-  color: white;
+  color: firebrick;
   font-weight: bold;
 }
 
